@@ -1,0 +1,50 @@
+﻿@charset "UTF-8";     
+/*=======================================*/
+/*	IMS File							*/
+/*=======================================*/
+
+.fileframe {position:relative}
+.fileframe input[type=file]{position:absolute;left:110px}
+.fileframe .dropzone{background-color:#efefff;cursor:pointer;position:absolute;left:0px;top:0px;width:100px;display:table-cell;height:100%;text-align:center;border:2px dashed #cdcdFF;}
+.fileframe .dropzone a{position:relative;top:40%;}
+.fileframe .filezone{background-color:#ffffff;position:absolute;left:105px;top:0px;right:1px;bottom:-4px;border:1px solid #cdcdcd;padding:1px;overflow:auto}
+.fileframe .progdiv{z-index:99;width:30px;line-height:9px;height:9px;border:1px solid #777777;display:inline-block;}
+.fileframe .progdiv span{position:relative;left:0px;top:0px;width:0px;height:7px;display:inline-block;font-size:6pt;color:#FFFFFF;background-color:#FF7733}
+.fileframe .progressrate{color:#000;z-index:999;position:relative;left:-30px;width:30px;display:inline-block;text-align:center;font-size:8px;}
+.fileframe .fileinfo{position:relative;left:-30px;display:inline-block}
+
+
+/* portlet manage*/
+#frame_portletmanage { position:absolute; top:30%; left:50%; margin-left:-250px; overflow:hidden; z-index:999993}
+#frame_portletmanage .portlet { width:500px; margin: 0 15px 15px 0; background-color:#fff; border:1px solid #333; border-radius: 0 0 5px 5px; display:inline-block; vertical-align: top;}
+
+#frame_portletmanage .portlet table { table-layout:fixed; font-size:12px; margin:20px; width:460px}
+#frame_portletmanage .portlet table .edity { border:1px solid #6f6f6f }
+#frame_portletmanage .portlet table span { display:inline-block; line-height:15px; text-align:left;padding:2px; width:98%; word-break: break-all}
+#frame_portletmanage .portlet table td { vertical-align:top; text-align: left; word-break: break-all; }
+#frame_portletmanage .portlet table td:first-child { color: #333; font-weight:bolder; }
+#frame_portletmanage .portlet table td:last-child { color: #666 }
+#frame_portletmanage .portlet div:last-child { line-height: 45px; border-top:1px solid #c5c9cb; padding: 5px 30px 0 30px;text-align:center }
+
+/* file dropzone */
+#frame_portletmanage .portlettab{ width:500px; background:#fff ; height:30px; text-align:center; border:1px solid #333; border-bottom:0 } 
+#frame_portletmanage .portlettab div{ cursor:pointer; display : inline-block; width:160px; height:20px; line-height:20px; margin-top:3px; margin-right:5px; background:#ffff; border:1px solid #cdcdcd; border-radius : 3px } 
+#frame_portletmanage .portlettab .on{ background:#f79f81; }   
+#frame_portletmanage .portlettab .off{ background:#fff; }   
+#frame_portletmanage .portlet #filezone_01{ cursor:pointer; width:100%; height:200px; display:block; padding:10px; text-align:left }
+#frame_portletmanage .portlet #filezone_01 #filezone_01_files { position:absolute; top:0; left:0; z-index:-1}
+#frame_portletmanage .portlet #filezone_01 .dropzone{ text-align:center;display:inline-block; height:150px; width:150px; line-height:150px; background-color:#ececec; z-index:99; border-radius:10px 0 0 0px; border:1px solid #cdcdcd}	
+#frame_portletmanage .portlet #filezone_01 .filezone{ text-align:center;display:inline-block; height:150px; width:325px; line-height:150px; background-color: #efefef; z-index:99; border-radius: 0 10px 0px 0;; border:1px solid #cdcdcd }
+#frame_portletmanage .portlet #filezone_01 .progresszone{ font-size:11px; margin-top:2px; padding:10px 0 0 8px; display:inline-block; height:50px; width:468px; background-color:#f3f3f3; z-index:99; border-radius: 0 0 10px 10px;; border:1px solid #cdcdcd }
+#frame_portletmanage .portlet #filezone_01 .progresszone .fsendprog01{ background:url(/html/img/progress01.png) no-repeat -225px 0 ;position:relative; display:inline-block; height:40px; width:225px; border:2px solid #eee; border-radius:10px 0 0 10px; background-color: #fff ; }
+#frame_portletmanage .portlet #filezone_01 .progresszone .fsendprog02{ background:url(/html/img/progress02.png) no-repeat -225px 0 ;position:relative; display:inline-block; height:40px; width:225px; border:2px solid #eee; border-radius:0 10px 10px 0; background-color: #fff ; }
+#frame_portletmanage .portlet #filezone_01 .progresszone .fsendtext01{ position:relative; left:-30px; top:-62px;}
+#frame_portletmanage .portlet #filezone_01 .progresszone .fsendtext02{ position:relative; left:30px; top:-62px;}
+#frame_portletmanage .portlet #filezone_01 .progdiv{z-index:99;width:210px;line-height:10px;height:10px;border:1px solid #777777;display:inline-block;margin-left:20px;text-align:left}
+#frame_portletmanage .portlet #filezone_01 .progdiv span{position:relative;left:0px;top:-1px;width:0px;height:8px;display:inline-block;font-size:10pt;color:#FFFFFF;background-color:#FF7733}
+#frame_portletmanage .portlet #filezone_01 .progressrate{color:#000;z-index:999;position:relative;left:-120px;top:-2px; width:10px;display:inline-block;text-align:center;font-size:10px;}
+#frame_portletmanage .portlet #filezone_01 .fileinfo{font-size:13px;line-height:15px;display:inline-block; border:0}
+#frame_portletmanage .portlet #filezone_01 ul{list-style:none; padding-left:0px }
+
+#frame_portletmanage .portlet #filezone_02{ cursor:pointer; width:100%; height:100px; display:none; padding:10px ; text-align:left }
+#frame_portletmanage .portlet #filezone_02 input { width:90%; margin-top:20px }

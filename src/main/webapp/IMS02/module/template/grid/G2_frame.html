@@ -1,0 +1,75 @@
+<div class="G2_Frame" id='{0}' name="IMS_G2">	
+	<div name="FunctionDiv" >
+		<div name="FunctionArea" title="아무곳이나 클릭하시면 검색이 수행됩니다&#10;Click anywhere to search"></div> 
+		<a class="G2_btn" name='excelexec'><i class='fas fa-vote-yea' title='엑셀파일로 다운로드&#10;Download Excel fiel'></i></a>	
+	</div>								
+	<div name="FrameDiv">
+		<div name="FixedDiv" class="fixed {1}">
+			<table name="FixedTable">
+				<colgroup>{2}</colgroup>
+				<thead>     
+					{3}                
+					<tr>{4}</tr>            
+				</thead>                    
+				<tfoot>                     
+					<tr><td>{5}</td></tr>   
+				</tfoot>                    
+				<tbody>                     
+					{6}                     
+				</tbody>                    
+			</table>                        
+		</div>                              
+		<div name="NonFixedDiv" class="nonfixed">   			
+			<table name="NonFixedTable">   
+				<colgroup>{7}</colgroup>    
+				<thead>     
+					{8}                
+					<tr>{9}</tr>            
+				</thead>                    
+				<tfoot>                     
+					<tr><td>{10}</td></tr>   
+				</tfoot>                    
+				<tbody>                     
+					{11}                     
+				</tbody>                    
+			</table>                        
+		</div> 
+	</div>
+	<table name="G2_footer">
+		<colgroup>
+			<col>
+			<col>
+		</colgroup>
+		<tbody>
+		<tr>
+			<td>
+				<div class='totalinfo'>  
+					<i class="fa fa-info-circle" aria-hidden="true"></i>
+					&nbsp;<em></em>&nbsp;/&nbsp;<span name='viewtop'>1</span>&nbsp;&nbsp;,&nbsp;<em></em>&nbsp;&nbsp;	
+					<input type='text' name='viewcount' value=''/>
+					<a>&nbsp;<i class="fas fa-search" aria-hidden="true" title="search"></i></a>	
+				</div>
+				<div class='viewrowinfo'>  
+					<input type='text' name='viewrowcount' value=''/>
+					<span>&nbsp;<i class="fas fa-redo-alt" aria-hidden="true" title="redraw"></i></span>	
+				</div>
+			</td>
+			<td style="text-align:right!important">
+				<div class='pagenavi'>  
+					<a><i class="fa fa-angle-double-left" aria-hidden="true"></i></a>&nbsp;<a><i class="fa fa-angle-left" aria-hidden="true"></i></a>
+					&nbsp;<em></em>&nbsp;
+					<a><i class="fa fa-angle-right" aria-hidden="true"></i></a>&nbsp;<a><i class="fa fa-angle-double-right" aria-hidden="true"></i></a>	
+					<div class='space'></div>
+					<em></em>
+					<div class='space'></div>	
+					<input type='text' name='gopage' value=''/>	
+					<a>&nbsp;<i class="fas fa-search" aria-hidden="true" title="search"></i></a>	
+				</div>
+			</td>
+		</tr>		
+		</tbody>
+	</table>
+	<div name='G2info'></div>
+	<div name='G2_scroll'><div name='G2_scroll_detail'></div></div>
+	<div name='G2_loader'></div>                             
+</div>                              	

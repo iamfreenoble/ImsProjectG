@@ -1,0 +1,61 @@
+@CHARSET "UTF-8";      
+
+html, body { height:100%; overflow:hidden; background-color:#dce2ed;margin:0px; font-family:'KOMACON', 'Nanum Gothic', 맑은고딕, "Apple SD Gothic Neo",돋움체,굴림체;font-size:12px;}	
+input:focus, textarea:focus, select:focus { outline:none; background-color : #d9ecff!important; }
+
+/* placeholder color */
+::-webkit-input-placeholder{color:#cdcdcd;} /* 웹킷 전용 속성 */
+textarea:-moz-placeholder, input:-moz-placeholder{color:#cdcdcd;} /* 파이어폭스 전용 속성 */
+
+.researcher { background-color:#eceef0;}
+.committee { background-color:#e0fccb;}
+.steward { background-color:#d9ecff;}
+.manager { background-color:#ffe3e3;}
+
+/* login */
+#login_section{border-radius:20px;padding:50px;position:absolute;top:45%;left:50%;margin-left:-350px;margin-top:-195px;width:700px;height:390px;box-shadow:5px 5px #999;background-color:#fff;padding:20px}
+#login_section section{margin:40px 0 40px 280px}
+#login_section section input:not([type=button]){height:20px;line-height:20px;padding:10px;width:200px;margin-top:10px;border:1px solid #ccc}
+#login_section ul {font-weight:bolder;line-height:20px}
+#login_section .loginbutton { position:absolute; left:530px; top:70px;}
+#login_section .loginbutton input { width:150px; height:95px; border:1px solid #ccc; border-radius:5px }
+#login_section .loginbutton input:hover { background-color: #c4cfe1 }
+
+/* frame */
+.imsproject	{ font-size:25px;font-weight:900;color:#ff5f11 }
+#frame_top { position:absolute;top:2px;left:2px;right:2px;border-radius:5px 5px;height:50px;line-height:50px;padding:0 50px}
+#frame_top article { width:100%;height:100%;padding-left:20px;height:50px;line-height:50px;min-width:950px; }
+#frame_top article .menu { font-size:16px; }
+#frame_top article .menu span { font-weight:bolder; text-shadow:1px 1px #ccc; cursor:pointer; padding:5px 20px;}
+#frame_top article .menu span:hover { background-color: #cdcdcd; border-radius:5px; }
+#frame_top article .user { margin-left:50px; font-size:12px; }
+#frame_top article .user span { text-shadow:1px 1px #ccc; cursor:pointer; padding:5px 10px;}
+#frame_top article .user .on { background-color: #910f36; border-radius:5px; color: #fff; text-shadow:1px 1px #333; }
+#frame_top article .menu2 { margin-left:50px; font-size:11px; }
+#frame_top article .menu2 span { text-shadow:1px 1px #ccc; cursor:pointer; padding:5px 10px;}
+#frame_top article .menu2 .on { background-color: #910f36; border-radius:5px; color: #fff; text-shadow:1px 1px #333; }
+
+#frame_main { text-align:left; position:absolute;display:block;top:50px;left:2px;bottom:20px;right:2px;border-radius:5px 5px;overflow:auto;text-align:center; background-color:#fff;padding:10px 50px}
+#frame_bottom { position:absolute;display:block;left:2px;bottom:2px;right:2px;line-height:26px;height:26px;border-radius:5px 5px;overflow:auto;text-align:center; background-color:#eceef0;text-align:left;font-size:12px;padding:5px 50px;}
+#frame_bottom span:first-child {margin-right:50px}
+#frame_bottom span:last-child {font-weight:bolder;color:#777;margin-left:50px;float:right}
+#frame_bottom address {display:inline-block}
+ 
+#frame_duration { display:none; position:absolute; z-index:999991; top:50%; left:50%; margin: -25px 0 0 -80px; }
+#frame_duration table { font-weight:bolder; font-size:18px; color:#004080; filter:opacity(70%); background-color:#eee; border-radius:40px; padding:20px }
+#frame_duration table td { border:0; }
+#frame_duration table td:first-child { color:#000} 
+
+.bootContainer { clear:both;margin:0; }
+#bootContainer { clear:both;margin:0; }
+
+a { text-decoration:none; font-weight:bolder }
+a:hover { color: #005fbd }
+
+/* section animation effect */
+section { -webkit-animation:fadeeffect 1s;animation:fadeeffect 2s }
+@-webkit-keyframes fadeEffect { from {opacity: 0;} to {opacity: 1;} }
+@keyframes fadeEffect { from {opacity: 0;} to {opacity: 1;}}
+
+/* fomtawesome 관련 */
+.fa-calendar-alt {font-size:16px;cursor:pointer}

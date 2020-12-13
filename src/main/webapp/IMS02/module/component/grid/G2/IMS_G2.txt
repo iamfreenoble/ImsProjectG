@@ -1,0 +1,126 @@
+
+[[	IMS G2	]]
+
+===================================================================
+***	수정내역		
+===================================================================
+ 
+ *				2018-03-08		이상준		기존 IMS_Grid 를 테이블 기반으로 재개발
+ *				2020-02-28		이상준		datasetting 부분 개선
+ *				2020-03-02		이상준		title 관련 부분 개선
+ *				2020-03-04		이상준		그리드 렌더링 개선
+ *				2020-03-05		이상준		그리드 렌더링 개선	-	1.	휠 사용시 위라래로 5개씩 스크롤되도록 처리
+ *																2.	현재 화면의 데이타를 위아래로 이동시키고 
+ *																	tr 을 이동하도록 수정	 	
+ *				2020-03-16		이상준		그리드 렌더링 수정	-	1.	휠 사용시 위라래로 5개씩 스크롤되도록 처리
+ *																2.	tr 이동시 속도에 따라 비정상동작으로 인해
+ *                                          						데이타를 렌더링하는 쪽으로 변경함 	
+ *				2020-03-25		이상준		message 다국어화
+ *				2020-04-04		이상준		information 중첩 처리 수정
+ *											datatype 추가	->	data type 이 "local" 인경우 로컬 데이타로 소트, 필터, 검색 수행 
+ *				2020-04-07		이상준		lineHeight 추가 
+ *				2020-04-27		이상준		view row count 가변화 처리 
+ *				2020-08-05		이상준		case sensitive 처리 
+ *				2020-12-05		이상준		1.	drag&drop 으로 항목을 좁힌후 window.resize 시 화면 깨짐 오류 수정
+ *											2.	localcall 시 like 검색 수행 안되는 문제 수정    
+ *											3.	엑셀이 1 페이지만 나오는 문제 수정 .. 엑셀 팝업 처리함
+ *											4.	리스트 쿼리시 page, pagerowcnt, rowfirst, rowlast, getdata, sort, filter 인자값이 아닐경우 default 처리함
+ *											5.	필터 500개로 줄이고 라인 피드 처리함    
+
+===================================================================
+***	사용
+===================================================================
+
+***	IE - Edge (New version)
+	IE - Edge (Old version)
+	IE - 11
+	Chrome
+	Opera
+	Whale
+	FireFox 테스트 함  
+
+-------------------------------------------------------------------
+1.	IMS Config G2 관련 설정
+-------------------------------------------------------------------
+
+var IMS_config = {
+	,	language	:	"kor"					//--**	X2 Grid 다국어 관련 메시지 처리		
+	,	G2_defaultrowcnt	:	100				//--**	X2 Grid default row count
+	,	G2_defaultscrollcnt	:	5 				//--**	X2 Grid	default scroll count 
+	,	dbnullType	: 	"NVL({0},'NULL')"		//--**	X2 Grid	default scroll count			
+	,	dbupperType	: 	"UPPER({0})"			//--**	X2 Grid	db uppercase		
+	,	dbconcatType: 	"CONCATE({0},{1},{0})"	//--**	X2 Grid	db concat		
+	,	defaultCase	: 	""						//--**	X2 Grid	default db case sensitive
+};
+
+-------------------------------------------------------------------
+***	description
+-------------------------------------------------------------------
+1.	datatype	
+	1)	local, server 
+	2)	local 인 경우 로컬 데이타를 사용하여 검색, 필터, 소트 처리 함
+		local 인경우 G2.origindata 에 값을 초기에 입려하여야 한다
+	3)  server 타입인 경우 서버의 쿼리등을 통해서 검색, 필터, 소트 처리함		
+	4)	datatype="local" 로 선언. 선언하지 않을경우 default "server"임
+
+-------------------------------------------------------------------
+1.	header group
+-------------------------------------------------------------------
+
+	headergroup="
+	                  { row=0, cell=3, colspan=5, title=과제정보 }
+	                  { row=0, cell=8, colspan=5, title=심의정보 }
+	                  "
+	
+-------------------------------------------------------------------
+2.	초기 필터 소트 사용	
+-------------------------------------------------------------------
+
+	this.ogrid = new G2(	$hD("#projectlist")
+						,	{InitialSearch:true}
+						, 	p
+						, 	{
+								initsort : {sortid:"createdate",sorttype:"DESC"}
+							,	initfilter : {filterid:"statname",filter:"진행중$^$대기중$^$정산중$^$중지$^$완료",filteroption:"equal"}
+							});
+	
+	filteroption	:
+				equal
+				not-equal	
+				greater-than
+				greater-than-equal
+				less-than
+				less-than-equal
+				between
+
+-------------------------------------------------------------------
+3.	Grid 사용예
+-------------------------------------------------------------------
+							
+	<G2	id="${id}" 
+			url="${url}" 
+			headerHeight="18"    
+			headerRowCnt="2" 
+			rowHeight="22"    
+			viewRowCnt="10"
+			pageRowCnt="100"
+			fixCnt="2"
+			rowSpan="" 
+			mode="view"
+      		headergroup="
+                  { row=0, cell=3, colspan=5, title=과제정보 }
+                  { row=0, cell=8, colspan=5, title=심의정보 }
+                  "
+			header="
+                  { title=IRB NO, 		eng_title=IRB NO, 		id=irb_no, 					width=60	}
+                  { title=과제명(한글),	eng_title=subject(kor), id=task_name_ko,			width=400, 	titleYN=N,	align=left,	click=${click} 	}
+                  { title=연구책임자, 		eng_title=incharge, 	id=review_director_name, 	width=70 	}
+                  { title=의뢰자, 		eng_title=의뢰자, 		id=update_name, 			width=70 	}
+                  { title=소속, 			eng_title=소속, 			id=pos, 					width=90 	}
+                  { title=접수일, 		eng_title=접수일, 		id=recept_date, 			width=70 	}
+                  { title=master_key,	eng_title=master_key, 	id=master_key, 				hiddenYN=Y	}
+                  { title=심의유형, 		eng_title=심의종류, 		id=review_kind, 			hiddenYN=Y 	}
+                  { title=과제상태, 		eng_title=과제상태, 		id=review_status, 			hiddenYN=Y 	}
+				" 
+	></G2>		
+							

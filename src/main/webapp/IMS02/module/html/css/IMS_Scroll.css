@@ -1,0 +1,21 @@
+﻿@charset "UTF-8";     
+
+/*=======================================*/
+/*	IMS Scroll													    */
+/*=======================================*/
+
+.xcroll_xframe_v { border:0px solid #eee; display:block;position:absolute;width:14px; }	
+.xcroll_xframe_v .upbutton { display:block;position:absolute;top:0;left:0;width:14px;height:10px;background-color:#bbb; border-radius:1px}
+.xcroll_xframe_v .upbutton:hover { cursor: pointer }
+.xcroll_xframe_v .downbutton { display:block;position:absolute;bottom:0;left:0;width:14px;height:10px;background-color:#bbb; border-radius:1px}
+.xcroll_xframe_v .downbutton:hover { cursor: pointer }
+.xcroll_xframe_v .scrollline { border:0; display:block;position:absolute;top:10px;left:0;bottom:10px;width:14px;background-color:transparent }
+.xcroll_xframe_v .scrollline .bar { border:1px solid #777; display:block;position:absolute;left:1px;width:10px;height:50px;background-color:#eee;}
+
+.xcroll_xframe_h { border:1px solid #8f8f8f; display:block;position:absolute;height:12px; }	
+.xcroll_xframe_h .leftbutton { display:block;position:absolute;top:0;left:0;width:10px;height:12px;background-color:#8f8f8f; color:#fff }
+.xcroll_xframe_h .leftbutton:hover { cursor: pointer }
+.xcroll_xframe_h .rightbutton { display:block;position:absolute;top:0;right:0;width:10px;height:12px;background-color:#8f8f8f; color:#fff}
+.xcroll_xframe_h .rightbutton:hover { cursor: pointer }
+.xcroll_xframe_h .scrollline { borde:0; display:block;position:absolute;top:0;left:10px;bottom:0;right:10px;height:12px;background-color:#fff}
+.xcroll_xframe_h .scrollline .bar { border:1px ridge #444; display:block;position:absolute;left:0;width:50px;height:10px;background-color:#cdcdcd }

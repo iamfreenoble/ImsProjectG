@@ -1,0 +1,200 @@
+﻿@charset "utf-8";
+
+/*==================================================================================*/
+/*  IMS Grid                                                                                                                                                */
+/*==================================================================================*/
+div.dataGridFrame{
+    font-size   :   14px ; 
+    padding     :   0px; 
+    clear       :   both;   
+    border-top  :   1px solid #838f9b; 
+    overflow    :   hidden  ;
+    margin      :   0px;
+    padding     :   0 -1px 0 0;
+    background-color: #fff;
+}
+div.dataGridFrame .outerDiv{
+    position    :   relative;   
+    overflow    :   hidden; 
+    width       :   100%; 
+    margin      :   0px;
+    border-bottom  :   1px solid #838f9b; 
+}
+div.dataGridFrame .innerDiv{
+    position    :   absolute;   
+    top         :   0px;    
+    height      :   100%;   
+    text-align  :   left;
+    margin      :   0px;
+}
+div.dataGridFrame .innerDiv ul{
+    margin      :   0px;
+    padding     :   0px;
+}
+div.dataGridFrame .innerDiv div ul{
+    margin      :   0px;
+    padding     :   0px;
+}
+div.dataGridFrame .innerDiv .header {
+    font-family     :   "Modern H Medium", "ModernHMediumWeb",'맑은 고딕'; 
+    font-size       :   14px;  
+    color           :   #232c45; 
+    padding         :   4px 4px 3px 4px;
+    letter-spacing  :   0px; 
+    line-height     :   15px; 
+    background      :   #fff; /*url(/WebIMS/images/tableThBg.gif4) repeat-x*/ 
+    border-bottom   :   1px solid #838f9b;   
+    text-align      :   center;
+    vertical-align  :   middle; 
+    float           :   left;
+    overflow        :   hidden;
+    text-overflow   :   ellipsis;   
+    white-space     :   nowrap;
+    height          :   100%;
+}
+div.dataGridFrame input[type="checkbox"], div.dataGridFrame input[type="radio"] {vertical-align:text-center; width:13px; height:13px; vertical-align:middle;}
+div.dataGridFrame .edit{ border:1px solid #fefefe; background-color:#fefefe; width:99%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;height:99%;}
+div.dataGridFrame .editon{ border:1px solid #707070 }
+
+div.dataGridFrame .innerDiv ul .data,
+div.dataGridFrame .innerDiv .dataframeout .data, 
+div.dataGridFrame .innerDiv .dataframeout li{
+    font-family     :   "Modern H Medium", "ModernHMediumWeb",'맑은 고딕';
+    font-size       :   14px;  
+    color           :   #444; 
+    padding         :   5px 5px 1px 3px;
+    letter-spacing  :   0px; 
+    line-height     :   44px;   
+    border-bottom   :   1px solid #d5dce4;  
+    vertical-align  :   middle; 
+    float           :   left;
+    overflow        :   hidden;
+    text-overflow   :   ellipsis;   
+    white-space     :   nowrap;
+    background-color:   #fff;
+}
+
+div.dataGridFrame .innerDiv ul .dataOver, 
+div.dataGridFrame .innerDiv .dataframeover .dataOver, 
+div.dataGridFrame .innerDiv .dataframeover li{
+    font-family     :   "Modern H Medium", "ModernHMediumWeb",'맑은 고딕';
+    font-size       :   14px;  
+    color           :   #444; 
+    padding         :   5px 5px 1px 3px;
+    letter-spacing  :   0px; 
+    line-height     :   44px; 
+    border-bottom   :   1px solid #d5dce4;  
+    vertical-align  :   middle; 
+    float           :   left;
+    overflow        :   hidden;
+    text-overflow   :   ellipsis;   
+    white-space     :   nowrap;
+    background-color:   #e6e6e6;
+}
+
+div.dataGridFrame .innerDiv .dataframesel li,
+div.dataGridFrame .innerDiv .dataframesel .data,
+div.dataGridFrame .innerDiv .dataframesel .dataOver{
+    font-family     :   "Modern H Medium", "ModernHMediumWeb",'맑은 고딕';
+    font-size       :   14px;  
+    color           :   #444; 
+    padding         :   5px 5px 1px 3px;
+    letter-spacing  :   0px; 
+    line-height     :   44px; 
+    border-bottom   :   1px solid #d5dce4;  
+    vertical-align  :   middle; 
+    float           :   left;
+    overflow        :   hidden;
+    text-overflow   :   ellipsis;   
+    white-space     :   nowrap;
+    background-color:   #bdcfd8;
+}
+
+div.dataGridFrame .pageNaviDiv{ 
+    height  :   30px;   
+    width   :   100%;
+    text-align  :center;
+    padding-top : 1px;
+    background-color    :   #fff;
+    border-bottom   :   1px solid #c4d1da;
+    z-index :   9999999;
+}
+
+div.dataGridFrame ul { clear:both; margin : 0px;}
+
+div.dataGridFrame .pageNaviDiv  {position:relative;border-top:1px solid #d5dce4; vertical-align: middle; }
+div.dataGridFrame .pageNaviDiv .pageInfoFrame2  { float:left; padding:0px; margin-left:0px; margin-top:5px; padding-top:0px; text-align:left;}
+div.dataGridFrame .pageNaviDiv .pageInfoFrame2 .pageInfo dfn { font-size:10px; display:inline-block }
+div.dataGridFrame .pageNaviDiv .pageInfoFrame2 .pageInfo dfn li { color:black; font-weight:bolder; display:inline-block }
+div.dataGridFrame .pageNaviDiv .pageInfoFrame   { font-size:12px; float:right; padding:0px; margin-right:10px; margin-top:4px; padding-top:-1px; vertical-align: middle;}
+div.dataGridFrame .pageNaviDiv .pageNaviSpan    { letter-spacing:1px; }
+div.dataGridFrame .pageNaviDiv .pageNaviSpanNum { font-size:12px; padding-left:7px; padding-right:7px; vertical-align: middle;}
+div.dataGridFrame .pageNaviDiv .pageNaviSpanNum a {  font-size:12px; padding : 3px; vertical-align: middle;}
+div.dataGridFrame .pageNaviDiv .pageInfo { color: #0b72d7; font-size: 8px; margin:0px; padding-left:4px; padding-right:10px; width:9px; height:9px; padding:1px 8px 0 8px;}
+div.dataGridFrame .pageNaviDiv .pageInfo a { color: #888; font-size: 8px; font-weight:bold;}
+div.dataGridFrame .pageNaviDiv .pageMove { cursor: pointer; text-decoration: none; }
+div.dataGridFrame .pageNaviDiv .pageMoveCurr { cursor: pointer; color:#2971bd; font-weight: bold; text-decoration: none; }
+div.dataGridFrame .pageNaviDiv .pageInfoFrame3  { font-size:12px; float:right; padding:0px; margin:0px; margin-top:4px; padding-top:0px; text-align:left;}
+div.dataGridFrame .pageNaviDiv .pageInfo2 { color: #0b72d7; font-size: 10px; padding-right:10px; margin:0px; padding:1px 8px 0 8px;}
+div.dataGridFrame .pageNaviDiv .pageInfo2 a { color: #444; font-size: 9px; font-weight:bolder}
+div.dataGridFrame .pageNaviDiv .pageInfo2 input { width: 30px; margin:0px; text-align:center; padding:0px; font-size:9pt; color:#444; }
+div.dataGridFrame .pageNaviDiv .pageInfo2 select { margin:0px; text-align:center; padding:0px; font-size:9pt; color:#444; }
+div.dataGridFrame .pageNaviDiv .footer { position:absolute; border:1px solid #cdcdcd; overflow:hidden}	
+div.dataGridFrame .pageNaviDiv .footer .footervalue { display:inline-block;text-align:right; }
+div.dataGridFrame .pageNaviDiv .footer .footervalue a { font-weight:bolder; color: blue }
+
+.CiDFilterStyle{
+    background-color:#FFFFFF;
+    position    :   absolute;
+    width       :   20px;
+    height      :   200px;
+    border      :   1px solid #DDDDDD;
+    border-bottom   :   0.01em solid #999999;
+    border-right    :   0.01em solid #999999;
+    top     :   0px;
+    left    :   0px;
+    display :   none;
+    z-index :   999;
+}
+
+.CiDFilterListStyle{
+    overflow        :   hidden;
+    text-overflow   :   ellipsis;   
+    white-space     :   nowrap;
+    background-color:   #f6f6f6;
+    clear           :   both;
+    text-align      :   left;
+    width           :   95%;
+    cursor          :   pointer;
+    font-size       :   8pt;
+    border          :   1px solid #FFFFFF;
+    padding         :   1px 1px 1px 1px;    
+    line-height     :   0.1em;
+}
+.CiDFilterListStyle span{ cursor : pointer; font-size : 8pt;}
+.CiDFilterListStyle input{ cursor : pointer; line-height :  0.1em;}
+.CiDFilterListStyle:hover{ border : 1px solid #555555;}
+
+.icon-next {background-image:url(images/paging_btn_next.png)}
+
+
+
+.ims-grid-sort-up {margin-top:0px !important;margin-left:1px !important;}
+.ims-grid-sort-down {margin-top:6px !important;}
+
+div.dataGridFrame .innerDiv .header .sort{ display:block; font-size:7pt; cursor:pointer; width:8px; height:12px; line-height:12px; color:#f00; background-color: #faac58;  border:1px solid red; margin-right:2px; float:right}
+div.dataGridFrame .innerDiv .header .filter{ display:block; font-size:7pt; cursor:pointer;width:8px; height:12px; line-height:12px; color:#00f; background-color: #8698c9; border:1px solid black; margin-right:2px; float:right}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	div.dataGridFrame .innerDiv .header .sort{ display:block; font-size:7pt; cursor:pointer; width:8px; height:12px; line-height:12px; color:white; background-color: Orange;  border:1px solid red; margin-right:2px; float:right}
+	div.dataGridFrame .innerDiv .header .filter{ display:block; font-size:7pt; cursor:pointer;width:8px; height:12px; line-height:12px; color:#00f; background-color: #8698c9; border:1px solid black; margin-right:2px; float:right}
+}
+
+@-moz-document url-prefix(){
+	div.dataGridFrame .innerDiv .header .sort{ position:relative; top:-15px; display:inline; font-size:7pt; cursor:pointer; line-height:12px; color:white; background: Orange;  border:1px solid red}
+	div.dataGridFrame .innerDiv .header .filter{ position:relative; top:-15px; display:inline; font-size:7pt; cursor:pointer; line-height:12px; color:#00f; background: #8698c9; border:1px solid black}
+} 
+
+.groupcss { font-weight: bolder; color:blue } 
+.groupcss_sub { font-weight: 600; color:#32b4eb } 
+

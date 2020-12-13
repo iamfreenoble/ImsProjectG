@@ -1,0 +1,54 @@
+#SERVER GUBUN
+GUBUN=REAL
+
+#SERVER VERSION
+VERSION=R-
+
+#CHARACTER TYPE
+CHARACTER.TYPE=UTF-8
+
+#USER CROSS MAP
+USER.key=key
+USER.id=id
+USER.pw=pw
+USER.username=uname
+USER.phone=phone
+USER.email=email
+USER.logindate=logindate
+USER.loginip=loginip
+USER.team=team
+USER.teamname=teamname
+
+#AES256 key
+AES256.key=EIRB2019-*BYLISANGJUN*$FORSUCCESS--
+
+#AES key  40 자 이상
+AES.key=EIRB2019BYLISANGJUNKEYForSuccessSecurity100KeyCheck
+AES.vec=EIRB2019BYLISANGJUNVECForSuccessSecurity400VecCheck
+
+# pre defined sessionTemplate filed
+ST.USER.ID=session_user_id
+ST.USER.ID.TITLE=session_user_id
+
+# ims config seperator
+CONST.SEPERATOR=§Å§
+
+# db setting
+DB.poolName=nIRBPool
+DB.driverClassName=net.sf.log4jdbc.sql.jdbcapi.DriverSpy
+DB.jdbcUrl=jdbc:log4jdbc:mariadb://localhost:3306/irb2019
+DB.username=ims
+DB.password=Qkekgksmfrnfma4**
+DB.maximumPoolSize=32
+DB.idleTimeout=600000
+DB.minimumIdle=4
+DB.connectionTestQuery=SELECT 1
+
+#file 
+FILE.defaultpath=D:\\ims_file\\
+
+#sample 
+PDF.path=D:\\ims_file\\pdf\\
+
+#ims Excel url
+IMS.G2.url=http://localhost:9019

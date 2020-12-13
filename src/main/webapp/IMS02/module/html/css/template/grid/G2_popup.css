@@ -1,0 +1,26 @@
+@CHARSET "UTF-8";      
+
+.common_pop_template .common_pop_template_body { position:absolute; top:52px; bottom:45px; right:0; left:0; overflow:auto; line-height:22px; padding: 5px}
+.common_pop_template .common_pop_template_body article[name=G2_popup_temp] {cursor:default}
+.common_pop_template .common_pop_template_body article[name=G2_popup_temp] h2 { color : #1E3269; }
+.common_pop_template .common_pop_template_body article[name=G2_popup_temp] .titlearea { display:inline-block; float:left; width: 130px}
+.common_pop_template .common_pop_template_body article[name=G2_popup_temp] .contentarea { display:inline-block; float:left; width:520px; padding:0!important}
+.common_pop_template .common_pop_template_body article[name=G2_popup_temp] .caption { color: #DF7401;font-weight:bolder; margin:0 0 15px 10px }
+.common_pop_template .common_pop_template_body article[name=G2_popup_temp] table { margin:0 auto;table-layput:fixed; font-size:12pt; width:95%; line-height:20px; }
+.common_pop_template .common_pop_template_body article[name=G2_popup_temp] table hd { font-size:13px; }
+.common_pop_template .common_pop_template_body article[name=G2_popup_temp] table input { padding:5px 10px; width:94%; border:1px solid #cdcdcd; margin:0!important}
+.common_pop_template .common_pop_template_body article[name=G2_popup_temp] table input:focus { border:1px solid #ccc }
+.common_pop_template .common_pop_template_body article[name=G2_popup_temp] table label { color: #8B5927; font-weight:bolder; margin: 0 30px 0 0 }
+.common_pop_template .common_pop_template_body article[name=G2_popup_temp] table span a { font-size:22px; margin: 0 15px 0 5px; cursor:pointer }   
+.common_pop_template .common_pop_template_body article[name=G2_popup_temp] table span a:hover { color:#0080c0 }   
+.common_pop_template .common_pop_template_body article[name=G2_popup_temp] table span .nosel { color: #333 }   
+.common_pop_template .common_pop_template_body article[name=G2_popup_temp] table span .sel { color: #FF8200 }   
+.common_pop_template .common_pop_template_body article[name=G2_popup_temp] section[name=G2_popup_filter_option_area] a {display:none}
+.common_pop_template .common_pop_template_body article[name=G2_popup_temp] table div[name=filterarea] { font-size:12px; margin-top:10px; padding:5px; float:left; border:1px solid #cdcdcd; height:200px; width:97%; overflow:hidden; overflow-y:auto;  word-wrap: break-word; overflow-wrap: break-word; }
+.common_pop_template .common_pop_template_body article[name=G2_popup_temp] table div[name=filterarea] a { cursor:pointer; margin:2px 5px 2px 0}
+.common_pop_template .common_pop_template_body article[name=G2_popup_temp] table div[name=filterarea] a:hover { background-color:#000069; color:#fff  }
+.common_pop_template .common_pop_template_body article[name=G2_popup_temp] table div[name=filtercount] { clear:both;width:98%;text-align:right;font-size:12px;font-weight:bolder }
+.common_pop_template .common_pop_template_body article[name=G2_popup_temp] table div[name=filtercaption] { font-size:12px; padding:2px; float:left; border:1px solid #cdcdcd; height:25px; width:97%; overflow:hidden; overflow-y:auto;  word-wrap: break-word; overflow-wrap: break-word; }
+.common_pop_template .common_pop_template_body article[name=G2_popup_temp] table div[name=filtercaption] a { cursor:pointer; margin:2px 5px 2px 0}
+
+

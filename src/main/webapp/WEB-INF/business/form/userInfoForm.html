@@ -1,0 +1,115 @@
+<script type="text/template" id="UserInfo_Regist">
+	<form name="UserInfoForm">
+		<input type="hidden" name="zip1" value=""/>
+		<input type="hidden" name="zip2" value=""/>			
+		<input type="hidden" name="subaddr"   value=""/>			
+		<input type="hidden" name="sstdid"    value=""/>
+		<input type="hidden" name="upd_id"    value=""/>
+		<input type="hidden" name="ip"        value=""/>
+		<input type="hidden" name="is_del"    value=""/>
+		<input type="hidden" name="is_lock"   value=""/>
+		<input type="hidden" name="user_pw" value=""/>
+		<input type="hidden" name="tel_full"  value=""/>
+		
+		<table class="formTable">
+			<colgroup>
+				<col width="150">			
+				<col>			
+				<col width="150">			
+				<col>			
+			</colgroup>			
+			<tbody>
+				<tr>
+					<th>승인여부</th>						
+					<td><input class="Required" type="radio" name="p_approve" value="Y">승인 
+						<input class="Required" type="radio" name="p_approve" value="N">미승인 </td>
+					<th>사용자유형</th>					
+					<td><input type="radio" name="p_gubun" value="01">연구원 ( <input type="checkbox" name="cro_yn" value="Y"> CRA )
+						<input type="radio" name="p_gubun" value="02">심사위원
+						<input type="radio" name="p_gubun" value="03">행정간사
+						<input type="radio" name="p_gubun" value="04">전문강사
+						<input type="radio" name="p_gubun" value="05">관리자
+					</td>
+				</tr>
+					<th>*아이디(사번)</th>
+					<td><input class="w250px Required" validate="{type:notnull}" type="text" name="user_id" placeholder="본인의 사번을 등록하시기 바랍니다"></td>
+					<th>등록일자</th>
+					<td><input class="w250px Required"  type="text" name="reg_dt" readonly></td>
+				</tr>
+				<!--tr>
+					<th>*비밀번호</th>
+					<td><input class="Required" validate="{type:notnull}" type="password" name="user_pw"></td>
+					<th>*비밀번호 확인</th>
+					<td><input class="Required" validate="{type:notnull}" type="password" name="user_confirm_pw"></td>
+				</tr-->
+				<tr>
+					<th>*이름</th>
+					<td><input class="Required" validate="{type:notnull}" type="text" name="user_nm"></td>
+					<th>*이메일</th>
+					<td><input class="Required" validate="{type:notnull}" type="email" name="email"></td>
+				</tr>
+				<tr>
+					<th>휴대전화</th>
+					<td><input class="w40px"  type="tel" name="hp1"> - <input class="w40px"  type="tel" name="hp2"> - <input class="w40px"  type="tel" name="hp3"></td>
+					<th>2차비밀번호</th>
+					<td><input class=""  type="password" name="user_second_pw"></td>
+				</tr>
+				<tr>
+					<th>소속</th>
+					<td><input class=""  type="text" name="school"></td>
+					<th>직위</th>
+					<td><input class=""  type="text" name="pos"></td>
+				</tr>				
+				<tr>
+					<th>기관</th>
+					<td><input type="text" name="aff"></td>
+					<th>전공</th>
+					<td><input class="" type="text" name="major"></td>
+				</tr>
+				<tr>
+					<th>유선전화</th>
+					<td><input class="w40px" type="tel" name="tel1"> - <input class="w40px" type="tel" name="tel2"> - <input class="w40px" type="tel" name="tel3"></td>
+					<th>학위</th>
+					<td><select name="degree_cd"><option value="">-</option></select></td>
+				</tr>
+				<tr>
+					<th>성별</th>
+					<td>
+						<input class="" type="radio" name="sex" value="M">남자 
+						<input class="" type="radio" name="sex" value="F">여자 
+					</td>
+					<th>FAX</th>
+					<td><input class="w40px" type="tel" name="fax1"> - <input class="w40px" type="tel" name="fax2"> - <input class="w40px" type="tel" name="fax3"></td>
+				</tr>
+				<tr>
+					<th>주소</th>
+					<td colspan="3"><input type="text" name="addr"></td>
+				</tr>
+				<tr>
+					
+				</tr>
+				<tr>
+					<th>비고</th>
+					<td colspan=3><textarea name="memo"></textarea></td>
+				</tr>
+				<tr>
+					<th>사용자이력서</th>
+					<td colspan=3></td>
+				</tr>
+				<tr>
+					<th>연구자준수서약서</th>
+					<td colspan=3></td>
+				</tr>
+				<tr>
+					<th>GCP/연구윤리 관련교육이력</th>
+					<td colspan=3></td>
+				</tr>
+				<tr>
+					<th>심의위원 활동이력</th>
+					<td colspan=3></td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+
+</script>

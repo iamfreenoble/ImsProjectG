@@ -1,0 +1,120 @@
+CHARSET "UTF-8";      
+
+.title { text-align:left; padding:10px 0 10px 0; font-weight:bolder;font-size:18px;text-shadow:1px 1px #cdcdcd; }
+.title span{ font-size:14px;text-shadow:1px 1px #cdcdcd;color:#ff8144 }
+
+/* 버튼 */
+.buttonarea { text-align:right;disply:block;overflow:hidden;margin:5px 0;}
+input[type=button], .button01 { font-size:12px;border:1px solid #758fba;margin:0;margin-left:10px;display:inline-block;background-color:#758fba;border-radius:5px 5px;color:#fff;padding:4px 20px;cursor:pointer}
+input[type=button]:hover, .button01:hover { background-color:#2f4160;  }
+.button02 { background-color:#758fba;border-radius:5px 5px;color:#fff;padding:5px 20px;margin-right:5px;cursor:pointer}
+.button02:hover { background-color:#2f4160;  }
+.button03 { background-color:#bbc8dd;border-radius:2px 2px;color:#fff;padding:2px 5px;margin-right:5px;cursor:pointer}
+.button03:hover { background-color:#5374aa;  }
+.button03on { background-color:#5374aa;border-radius:2px 2px;color:#fff;padding:2px 5px;margin-right:5px;cursor:pointer}
+.button03on:hover { background-color:#0000f0;  }
+
+/* input textarea select */
+input[type=text], 
+input[type=password], 
+input[type=tel], 
+input[type=email], 
+textarea { font-size:12px; border:1px solid #d8dfff; padding:5px; border-radius:5px 5px; width:93%}	
+input[type=text]:focus, .formTable input[type=text]:active, 
+input[type=password]:focus, 
+input[type=tel]:focus, 
+input[type=email]:focus, 
+textarea:focus { border:1px solid #d8dfff;}	
+input[type=checkbox], .formTable input[type=radio]{ position:relative; top:3px; }
+select { font-size:12px; border:1px solid #d8dfff; padding:2px 5px; border-radius:5px 5px; }
+
+/* 테이블 */
+.formTable { font-size:12px;width:100%; border-collapse:collapse; table-layout:fixed }
+.formTable th { background-color:#eff2fa;border:1px solid #d8dfff;padding:5px 10px;text-align:center}		
+.formTable td { border:1px solid #d8dfff;padding:5px 10px }		
+.Required { background-color:#ffffdd!important}
+
+.G2_Frame table td select { font-size:11px; border:0; padding:0 5px; border-radius:1px 1px; margin:-2px 5px}
+.G2_Frame table td input[type=radio], .G2_Frame table td input[type=checkbox] { font-size:11px; height:9px; padding:0 5px;}
+
+#userSelectTd { cursor:pointer; }
+
+.formTable div {line-height:18px}
+.edit { 
+	overflow:hidden;
+	word-break:break-all;
+	white-space:pre-line;
+	padding: 0 10px;
+	border-bottom: 1px solid #8ac5ff;
+	display:inline-block;
+	-webkit-user-modify: read-write;
+  -moz-user-modify: read-write;
+  user-modify: read-write; 
+  position:relative;
+  top:6px
+} 
+.formTable .edit:focus { outline:none; backgroud-color:#d9ecff}
+.view { 
+    overflow:hidden;
+    word-break:break-all;
+    white-space:pre-line;
+    padding: 0 10px;
+    display:inline-block;
+    position:relative;
+    top:6px} 
+.formTable .view:focus { outline:none; backgroud-color:#d9ecff}
+
+/* Personal */
+#personalarea {border:1px solid #ccc; overflow:hidden; margin-bottom:10px; }
+#personalarea .recycle {text-align:right;width:99%;height:22px;padding-top:5px;cursor:pointer}
+#personalarea .recycle span {position:relative;top:-2px;padding:5px 5px 0 0}
+#personalarea .alrim {position:relative;top:-10px;text-align:left;width:100%;height:70px;border-bottom:1px solid #ccc;overflow:auto;padding:0;}
+#personalarea article {padding:5px; font-size:12px; font-weight:bolder}
+#personalarea article div {line-height:13px;text-align:left;float:left;background-color:#efefef;padding:10px;margin:0 0 10px 0;box-shadow:1px 1px #666;border-radius:5px 5px}
+#personalarea a { padding:5px}
+#personalarea a:link { color: #004080; text-decoration: none; }
+/* #personalarea a:visited { color: purple; text-decoration: none; } */
+#personalarea a:hover { color: #46a3ff; text-decoration: none; }
+#personalarea a:active { color: white; background-color: #b0bed7; }
+#personalarea nav {margin:40px 20px;float:left}
+#personalarea em { font-weight:bolder; color:#ff6868;}
+
+/* searchArea */
+#searchArea { border:1px solid #ccc; overflow:hidden; margin-bottom:10px; padding:10px 20px}
+
+/* Tab */
+.tab {overflow:hidden;}
+.tab button{cursor:pointer;background-color:inherit;float:left;border:1px solid #ccc;border-bottom:1px solid #333;margin-right:1px;margin-bottom:10px;padding:8px 15px;border-radius:8px 8px 1px 1px}
+.tab button:hover{background-color:#f4fbfb}
+.tab button:focus{outline:0}
+.tab .on{background-color:#d9ecff}
+.tab .off{background-color:inherit}
+
+.boxFrame { border:1px solid #ccc; padding:10px 10px;}
+input[type=radio]:after{content:" "};
+
+/* 설명  */
+.footer_explane {text-align:left}
+.footer_explane h3 {text-align:center}
+.footer_rule {border:1px solid #333; background-color:#f1f1f1; padding:10px; margin-top:20px; text-align:left}
+
+/* 심사평가지 */
+.evaluationFormTable { table-layout:fixed; boredr:0; }
+.evaluationFormTable th { border:1px solid #cdcdcd; background-color: #eee; font-weight:800; padding:10px; }
+.evaluationFormTable td { vertical-align : top; padding:5px 0 }
+.evaluationFormTable #fieldTable {table-layout:fixed; width:100%; border:0}
+.evaluationFormTable #fieldTable2 {table-layout:fixed; width:100%; border:1px solid #cdcdcd; padding:0; border-collapse:collapse; text-align:center}
+.evaluationFormTable #fieldTable2 th {border:1px solid #cdcdcd; padding:4px; font-weight:normal;}
+.evaluationFormTable #fieldTable2 td {border:1px solid #cdcdcd;padding:4px; }
+.evaluationFormTable #fieldTable2 td:first-child {text-align:left;padding-left:10px}
+.evaluationFormTable textarea { width:98%;margin-left:2px }
+
+/* 첨부파일  */
+.f2_file_span { cursor:pointer }
+.f2_file_span:hover { background-color:#d9d900}
+.f2_file_span a { color:#cdcdcd; font-weight:bolder}
+
+/* ul 공통 */
+ul { list-style:none }
+
+#bootContainerTable tbody td {border:1px solid green}

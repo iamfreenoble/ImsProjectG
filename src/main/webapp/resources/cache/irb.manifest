@@ -1,0 +1,14 @@
+CACHE MANIFEST
+# version 0.1.1
+
+CACHE:
+/html/css/*
+/html/img/*
+/html/js/*
+/IMS02/module/css/*
+/IMS02/module/html/images/*
+/IMS02/module/js/*
+
+NETWORK:
+
+FALLBACK:

@@ -1,0 +1,109 @@
+body,table{
+	scrollbar-3dlight-color:#5EA5D5;
+	scrollbar-arrow-color:#3D9DDE;
+	scrollbar-track-color:#D6E9F6;
+	scrollbar-darkshadow-color:#B0D7F1;
+	scrollbar-face-color:#ffffff;
+	scrollbar-highlight-color:#B0D7F1;
+	scrollbar-shadow-color:#B0D7F1;
+}
+
+.treebtnstyle{
+	cursor:pointer;
+	position:absolute;
+	top:20px;
+	text-align:right;
+	width:180px;
+	height:20px;
+	background-color:#FFFFFF;
+	visibility:visible;
+	border:2px outset buttonhighlight;
+	padding :3px;
+}
+
+.treebtnstyle2{
+	display:none;
+}
+
+.treestyle{
+	position:absolute;
+	top:50px;
+	width:180px;
+	height:90%;
+	background-color:#FFFFFF;
+	visibility:visible;
+	border:2px outset buttonhighlight;
+	padding :3px;
+	overflow :auto;
+	word-wrap : normal;
+}
+
+.treestyle2{
+	position:absolute;
+	top:5px;
+	border:1px solid buttonface;
+	width:98%;
+	height:98%;
+	visibility:visible;
+	overflow :auto;
+	word-wrap : normal;
+}
+
+.treestyle3{
+	position:absolute;
+	top:5px;
+	border:0 solid buttonface;
+	width:98%;
+	height:98%;
+	visibility:visible;
+	overflow :auto;
+	word-wrap : normal;
+}
+
+.treemenustyle{
+	cursor:default;
+	position:absolute;
+	text-align:left;
+	width:120px;
+	background-color:#FFFFFF;
+	visibility:hidden;
+	border:2px outset buttonhighlight;
+	padding :3px;
+}
+
+.treetablestyle{
+	word-wrap : normal;
+	word-break : keep-all;
+	line-break : strict;
+}
+
+.treetdstyle{
+	word-wrap : normal;
+	word-break : keep-all;
+	line-break : strict;
+	padding: 4px 10 2px 0;
+}
+
+.treeImage{
+	margin: 0 5px 0 0;
+}
+
+.treeSelectAconStyle{
+	cursor : pointer;
+	font-weight:none;
+	color : #000000;
+	background-color:#FFFFFF;
+	word-wrap : normal;
+	word-break : keep-all;
+	line-break : strict;
+}
+
+.treeSelectAconSelStyle{
+	cursor : pointer;
+	font-weight:none;
+	color : #FFFFFF;
+	background-color:#93A070;
+	word-wrap : normal;
+	word-break : keep-all;
+	line-break : strict;
+}

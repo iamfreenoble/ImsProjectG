@@ -1,0 +1,22 @@
+﻿@charset "UTF-8";     
+
+#Cal2	{ position:absolute; background-color: #fff; border:1px solid #cdcdcd; overflow:hidden; min-width:423px }
+#Cal2	div {width:100%; margin:10px;}
+#Cal2	div:last-child {text-align:right}
+#Cal2	div select {margin-right:30px; padding:5px 10px;}
+#Cal2	div span { text-align:center;width:20px; display:inline-block; font-weight:800}
+#Cal2	div span:hover { background-color: #dbdbff; cursor:pointer }
+#Cal2	div .on { background-color: #dddd00;}
+#Cal2	#cdate { width:150px;display:inline-block; font-weight:800;}
+#Cal2	table { table-layout:fixed; margin:10px; border:1px solid #ececec; border-collapse : collapse}
+#Cal2	table th { font-weight:800; text-align:center; background-color: #ececec; padding:5px; }
+#Cal2	table th:first-child {color:green}
+#Cal2	table th:nth-child(7) {color:blue}
+#Cal2	table th:last-child {color:red}
+#Cal2	table td{text-align:center; padding:5px; cursor:pointer; font-weight: 900 }
+#Cal2	table td:first-child {color:green}
+#Cal2	table td:nth-child(7) {color:blue}
+#Cal2	table td:last-child {color:red}
+#Cal2	table td:hover {background-color: #ff8040; }
+#Cal2	table .currday { background-color: #dddd00; }
+#Cal2	table .off{ font-weight: 200!important; color:#999!important }

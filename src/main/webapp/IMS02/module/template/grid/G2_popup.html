@@ -1,0 +1,60 @@
+<script type="text/template" id="template_G2_sortfilter">
+	<article name="G2_popup_temp">
+		<table>
+		<colgroup>
+			<col width="100">
+			<col>	
+		</colgroup>
+		<tbody>
+			<tr>
+				<th>TARGET</th>
+				<td><h3></h3></td>	
+			</tr>
+			<tr>
+				<th>SEARCH</th>
+				<td>
+					<section name="G2_popup_keycheckarea">
+						<input style="width:70%!important;display:inline-block" type="text" name="keycheckvalue" placeholder="Key input to like searches.." />
+						<input style="width:10px!important;display:inline-block" name="casecheckvalue" type="checkbox"> Case senstive
+					</section>
+				</td>	
+			</tr>
+			<tr>
+				<th>SORT</th>
+				<td>
+					<section name="G2_popup_sortarea">
+						<span>
+							<a name='sortdown' class="nosel"><i class="fas fa-sort-alpha-down"></i></a>
+							<a name='sortup' class="nosel"><i class="fas fa-sort-alpha-up"></i></a>
+						</span>
+					</section>
+				</td>	
+			</tr>
+			<tr>
+				<th>FILTER</th>
+				<td>
+					<div name="filtercaption"></div>
+					<div name="filterarea" option="equal"></div>
+					<div name="filtercount"></div>
+				</td>	
+			</tr>
+			<tr>
+				<th></th>
+				<td>
+					<section name="G2_popup_filter_option_area">
+						<span>
+							<a class="nosel" name='equal' title='equal'><i class="fas fa-equals"></i></a>
+							<a class="nosel" name='not-equal' title='not-equal'><i class="fas fa-not-equal"></i></a>
+							<a class="nosel" name='greater-than' title='greater-than'><i class="fas fa-greater-than"></i></a>
+							<a class="nosel" name='greater-than-equal' title='greater-than-equal'><i class="fas fa-greater-than-equal"></i></a>
+							<a class="nosel" name='less-than'><i class="fas fa-less-than"></i></a>
+							<a class="nosel" name='less-than-equal' title='less-than-equal'><i class="fas fa-less-than-equal"></i></a>
+							<a class="nosel" name='between' title="between"><i class="fas fa-pause"></i></a>
+						</span>
+					</section>
+				</td>	
+			</tr>
+		</tbody>
+		</table>
+	</article>
+</script>

@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="biz.userInfo">  
+
+	<!-- List -->
+	<select id="list" parameterType="map" resultType="map" resultSetType="FORWARD_ONLY">
+		/**  biz.userInfo.list	**/
+		SELECT	${getdata}
+		FROM  (
+			SELECT  '' AS g2check
+				,	T.g2total
+				, 	R.*
+			FROM 	userinfo R
+				,  (
+					SELECT COUNT(*) AS g2total
+					FROM   userinfo
+					WHERE  is_del = 'N'
+					${keycheck}
+					${filter}  
+					${sort}	
+			    ) T
+			WHERE  is_del = 'N'
+			${keycheck}
+			${filter}
+			${sort}	
+	 		LIMIT   ${rowFirst}, ${pageRowCnt}
+    	) OOO
+    	${groupby}
+    </select>
+
+	<!-- view -->
+	<select id="view" parameterType="map" resultType="map">
+		/**  biz.userInfo.view	**/
+		SELECT	R.*
+				,		C.title AS auth_name
+		FROM		userinfo R	LEFT OUTER JOIN code C ON C.gubun = 'auth_cd' and C.id = R.p_gubun
+		WHERE		user_id = #{user_id}
+	</select>
+
+	<!-- insert -->
+	<insert id="insert" parameterType="map">
+		/**  biz.userInfo.insert	**/
+		INSERT INTO userinfo (
+				user_id
+			, 	user_pw
+			, 	school
+			, 	aff
+			, 	pos
+			, 	degree_cd
+			, 	user_nm
+			, 	email
+			, 	tel1
+			, 	hp1
+			, 	zip1
+			, 	zip2
+			, 	addr
+			, 	subaddr
+			, 	p_gubun
+			, 	memo
+			, 	p_approve
+			, 	major
+			, 	sstdid
+			, 	reg_dt
+			, 	ip
+			, 	is_del
+			, 	is_lock
+			, 	tel2
+			, 	tel3
+			, 	hp2
+			, 	hp3
+			, 	sex
+			, 	cro_yn
+			, 	fax1
+			, 	fax2
+			, 	fax3
+			, 	tel_full
+			, 	user_second_pw
+		) VALUES (
+				#{user_id}
+			, 	#{user_pw}
+			, 	#{school}
+			, 	#{aff}
+			, 	#{pos}
+			, 	#{degree_cd}
+			, 	#{user_nm}
+			, 	#{email}
+			, 	#{tel1}
+			, 	#{hp1}
+			, 	#{zip1}
+			, 	#{zip2}
+			, 	#{addr}
+			, 	#{subaddr}
+			, 	#{p_gubun}
+			, 	#{memo}
+			, 	#{p_approve}
+			, 	#{major}
+			, 	#{sstdid}
+			, 	now()
+			, 	#{ip}
+			, 	#{is_del}
+			, 	#{is_lock}
+			, 	#{tel2}
+			, 	#{tel3}
+			, 	#{hp2}
+			, 	#{hp3}
+			, 	#{sex}
+			, 	#{cro_yn}
+			, 	#{fax1}
+			, 	#{fax2}
+			, 	#{fax3}
+			, 	#{tel_full}
+			, 	#{user_second_pw}
+		)		
+	</insert>
+
+
+	<!-- update -->
+	<update id="update" parameterType="map">
+		/**  biz.userInfo.update	**/
+		UPDATE userinfo 
+		SET	
+				school              =	#{school}                   
+			, 	aff                 =	#{aff}                      
+			, 	pos                 =	#{pos}                      
+			, 	degree_cd           =	#{degree_cd}                
+			, 	user_nm             =	#{user_nm}                  
+			, 	email               =	#{email}                    
+			, 	tel1                =	#{tel1}                     
+			, 	hp1                 =	#{hp1}                      
+			, 	zip1                =	#{zip1}                     
+			, 	zip2                =	#{zip2}                     
+			, 	addr                =	#{addr}                     
+			, 	subaddr             =	#{subaddr}                  
+			, 	p_gubun             =	#{p_gubun}                  
+			, 	memo                =	#{memo}                     
+			, 	p_approve           =	#{p_approve}                
+			, 	major               =	#{major}                    
+			, 	sstdid              =	#{sstdid}                   
+			, 	upd_id              =	#{upd_id}                   
+			, 	upd_dt              =	now()
+			, 	ip                  =	#{ip}                       
+			, 	is_del              =	#{is_del}                   
+			, 	is_lock             =	#{is_lock}                  
+			, 	tel2                =	#{tel2}                     
+			, 	tel3                =	#{tel3}                     
+			, 	hp2                 =	#{hp2}                      
+			, 	hp3                 =	#{hp3}                      
+			, 	sex                 =	#{sex}                      
+			, 	cro_yn              =	#{cro_yn}                   
+			, 	fax1                =	#{fax1}                     
+			, 	fax2                =	#{fax2}                     
+			, 	fax3                =	#{fax3}                     
+			, 	tel_full            =	#{tel_full}                 
+			, 	user_second_pw      =	#{user_second_pw} 			
+		WHERE	user_id				=	#{user_id}                  
+	</update>
+
+	<!-- delete -->
+	<delete id="remove" parameterType="map">
+		/**  biz.userInfo.delete	**/
+		DELETE  FROM  userinfo 
+		WHERE	user_id = #{user_id}
+    </delete>
+	
+	<!-- checkIdAndPw -->
+	<select id="checkIdAndPw" parameterType="map" resultType="map">
+		/**  biz.userInfo.checkIdAndPw	**/
+		SELECT	*
+		FROM	userinfo
+		WHERE		user_nm = #{user_nm}
+		AND CONCAT(hp1,hp2,hp3)=CONCAT(#{hp1},#{hp2},#{hp3})
+		AND email=#{email}
+		<if test="user_id != null and user_id != ''">
+		 AND user_id = #{user_id}
+		 </if>
+	</select>
+	
+	<!-- checkIdAndPw -->
+	<select id="checkDupId" parameterType="map" resultType="map">
+		/**  biz.userInfo.checkDupId	**/
+		SELECT	*
+		FROM	userinfo
+		WHERE		user_id = #{user_id}
+		
+	</select>
+	
+	<!-- update -->
+	<update id="updatePw" parameterType="map">
+	/**  biz.userInfo.updatePw	**/
+		UPDATE userinfo 
+		SET	user_pw=#{user_id}
+		WHERE		user_id = #{user_id}
+	</update>
+</mapper>

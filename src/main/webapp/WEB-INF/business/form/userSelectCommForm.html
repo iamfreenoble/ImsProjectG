@@ -1,0 +1,58 @@
+<script type="text/template" id="UserSelectComm_Popup">
+	<div id="UserSelectCommFrame">
+
+		<!-- LIST -->
+		<div id="bootContainer" class="w100 h300px">
+			<G2	id="userSelectList" 
+				url="/userInfo/list.do" 
+				headerHeight="30"    
+				headerRowCnt="1" 
+				rowHeight="22"    
+				viewRowCnt="10"
+				pageRowCnt="100"
+				fixCnt="2"
+				rowSpan="" 
+				mode="view"
+				headergroup=""
+				header="
+							{ title=아이디, id=user_id, width=70, align=center, hiddenYN=Y }
+							{ title=성명, id=user_nm, width=80, align=center, click=lfnCallCUserSelectCommSelect }
+							{ title=소속, id=school, width=120, align=left }
+							{ title=부서, id=aff, width=120, align=left }
+							{ title=직급, id=pos, width=90, align=center}
+							{ title=전공, id=major, width=90, align=center}
+							{ title=HP, id=hp1, width=90, align=center}
+							{ title=TEL, id=tel1, width=90, align=center}
+							{ title=이메일, id=email, width=140, align=left }
+							{ title=승인여부, id=p_approve, width=80, hiddenYN=Y }
+						" 
+			></G2>		
+		</div>
+
+		<div id="selectUserCommFrame" style="margin-top:50px;overflow:hidden;overflow-y:auto;height:300px">
+		<table class="formTable">
+			<colgroup>
+				<col width="120">			
+				<col width="140">			
+				<col width="110">
+				<col width="110">
+				<col width="110">
+				<col width="150">			
+				<col width="50">
+			</colgroup>			
+			<tbody>
+				<tr>
+					<th>성명</th>
+					<th>소속(과)</th>
+					<th>직급</th>
+					<th>전공</th>
+					<th>HP</th>
+					<th>이메일</th>
+					<th>삭제</th>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+
+	</div>
+</script>

@@ -1,0 +1,40 @@
+/*	나눔고딕	*/
+@font-face{	
+	font-family		:	'Nanum Gothic';
+	font-display	:	fallback;
+	src	:	local('Nanum Gothic'), url('/IMS02/module/html/fonts/NanumGothic.woff') format('woff');
+	src	:	url('/IMS02/module/html/fonts/NanumGothic.eot');
+	src	:	url('/IMS02/module/html/fonts/NanumGothic.eot?#iefix') format('embedded-opentype'),
+				url('/IMS02/module/html/fonts/NanumGothic.woff') format('woff'),
+				url('/IMS02/module/html/fonts/NanumGothic.ttf') format('truetype');
+}
+
+/*	만화진흥원체 	*/
+@font-face { 
+	font-family		:	'KOMACON'; 
+	font-weight		:	normal; 
+	font-style		: normal; 
+	font-display	:	fallback;
+	src	:	local('KOMACON'), url('/IMS02/module/html/fonts/NanumGothic.woff') format('woff');
+	src	: url('/IMS02/module/html/fonts/KOMACON.woff') format('woff'); 
+}
+
+/*	배달의 민족 한나체 Air */
+@font-face { 
+	font-family		: 'BMHANNAAir'; 
+	font-weight		: normal; 
+	font-style		:	normal; 
+	font-display	:	fallback;
+	src	:	local('BMHANNAAir'), url('/IMS02/module/html/fonts/BMHANNAAir.woff') format('woff');
+	src	: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.0/BMHANNAAir.woff') format('woff'); 
+}	
+
+/*	카페 24 심픞해	*/
+@font-face { 
+	font-family		: 'Cafe24Simplehae'; 
+	font-weight		:	normal; 
+	font-style		: normal; 
+	font-display	:	fallback;
+	src	: local('Cafe24Simplehae'), url('/IMS02/module/html/fonts/Cafe24Simplehae.woff') format('woff');
+	src	:	url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Simplehae.woff') format('woff'); 
+}

@@ -1,0 +1,14 @@
+@charset "UTF-8";    
+
+/* 데스크탑 */
+.common_pop_template {text-align:left;position:relative;height:100%; }
+.common_pop_template header {position:absolute; top:0; width:100%; height:40px; border-bottom:1px solid #cdcdcd; padding-bottom:10px; padding-left:10px; }
+.common_pop_template h2 { font-size: 1.5em;margin-block-start: 0.83em;margin-block-end: 0.83em;margin-inline-start: 0px;margin-inline-end: 0px;margin: 0.83em;font-weight: bold; }     
+.common_pop_template header h2 { width:80%; display:inline-block }     
+.common_pop_template header a { float:right; padding:12px 20px 0 0; cursor:pointer;  }
+.common_pop_template header a:hover { background-color: #FDF5D2 }
+.common_pop_template footer {position:absolute; bottom:0; width:100%; height:40px; border-top:1px solid #cdcdcd; text-align:center; line-height:40px }
+.common_pop_template footer #defaultButtonArea { padding-left:15px;float:left;text-align:left }
+.common_pop_template footer #customButtonArea { padding-right:15px;float:right;text-align:right }
+.common_pop_template footer span { cursor:pointer; border: 1px solid #dedede; border-bottom-color: #bcbcbc; border-right-color: #bcbcbc; margin:0 1px 0 1px;padding:5px 10px 5px 10px; border-radius : 3px}    
+.common_pop_template footer span:hover { border: 1px solid #bcbcbc; border-bottom-color: #dedede; border-right-color: #dedede; background-color: #FDF5D2 }    

@@ -1,0 +1,32 @@
+﻿@charset "UTF-8";     
+
+/*
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+body { font-family: 'Nanum Gothic', serif; }
+*/
+
+#frame_chatting_user_list {z-index:9991; display:none; position:absolute; top:70px; right:50px; width:270px; height:50%; overflow:auto; background-color: #fefefe; padding:10px; padding-top:20px; border:1px solid #444}
+#frame_chatting_user_list span { position:absolute; left:20px; top:2px; font-weight:bolder; cursor:pointer }
+#frame_chatting_user_list #frame_chatting_user_list_detail{ overflow:auto; width:100%; height:100%; }
+#frame_chatting_user_list img { width:100px; margin:10px }
+#frame_chatting_user_list li{ display:inline-block; padding-bottom:3px; text-align:center  }
+#frame_chatting {position:absolute; display:block; top:50px; right:10px; overflow:hidden; background-color:transparent}
+#frame_chatting input[type=button]{ padding:2;margin:0; width:30px; font-size:16px; font-weight:bolder; border-radius:20px; border:1px solid #444;background-color:#ffffc6 }
+#frame_chatting img{ z-index:9999; width:50px; font-size:16px; font-weight:bolder; border-radius:50px; border:1px solid #cdcdcd;}
+
+/* 채팅창 */
+#ims_wsocket_template {z-index:1; position:absolute;left:0;top:0;right:0;bottom:0; background:url(/WebIMS/images/chatting/ims_chatting_02.png) no-repeat center; background-size: 271px 258px;  }
+#ims_wsocket_template div[name=userframe] { padding:5px;background-color:#f4941f; position:absolute;left:0;right:0;top:0; width:98%; height:55px; padding: 5px }
+#ims_wsocket_template div[name=userframe] #_first { display:inline-block; float:left; width: 88%; margin:5px 5px 8px 0; overflow:hidden; }
+#ims_wsocket_template div[name=userframe] #_first span { color: #0101DF; font-weight:bolder }
+#ims_wsocket_template div[name=userframe] #_second { cursor:pointer;float:left; width:10%; height:55px; background:url(/WebIMS/images/chatting/ims_chatting.png) no-repeat center -6px; background-size: 55px 55px }
+#ims_wsocket_template div[name=content] { padding:5px;background-color:transparent; position:absolute;left:0;right:0;top:65px;bottom:160px;font-size:10px; border-top:1px solid #cdcdcd; border-bottom:1px solid #cdcdcd; overflow:auto }
+#ims_wsocket_template div[name=content] .wmessage { font-size:12px; overflow:hidden; padding:2px 5px 5px 20px; width:90%; }
+#ims_wsocket_template textarea{ padding:5px;border:0; border-bottom:1px solid #cdcdcd; position:absolute;width:100%;height:105px;left:0;right:0;bottom:40px; }
+#ims_wsocket_template .buttondiv{ position:absolute; height:40px; background-color:#f4941f; width:100%;left:0;right:0;bottom:0;  }
+#ims_wsocket_template input[type=button]{ font-size:11px; font-family:verdana; background-color:#000; color:#eee; cursor:pointer; float:right; margin:10px 5px 0 0; font-weight:bolder; border:1px solid #333; padding: 2px 20px 2px 20px; }
+#userlist { display:none; position:absolute; top:50px; right:2px; bottom:40px; width:200px; z-index:9; border:1px solid #A9BCF5; background:#ffffff; overflow:auto;text-align:center;font-size:12px } 
+#userlist li img { cursor: pointer }
+#ims_wsocket_template .buttondiv #imelabel{font-size:12px; font-weight:bolder; margin: 25px 0 0 10px; }
+
+

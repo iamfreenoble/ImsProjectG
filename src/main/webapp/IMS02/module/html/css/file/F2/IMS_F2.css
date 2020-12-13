@@ -1,0 +1,17 @@
+﻿@charset "UTF-8";     
+/*=======================================*/
+/*	IMS File Ver 02							*/
+/*=======================================*/
+
+#IMS_F2{ }
+#IMS_F2 #F2_access{ overflow:hidden }
+#IMS_F2 #F2_access div {border:1px solid #ffc7ac;margin:5px 0;padding:10px; border-radius:5px; font-weight:700;}
+#IMS_F2 #F2_access div:first-child { width:20%; }
+#IMS_F2 #F2_access div:last-child { width:72%; }
+#IMS_F2 #F2_access div:hover { background-color: #fffaf7}
+#IMS_F2 .F2_selectzone { float:left; cursor:pointer}
+#IMS_F2 .F2_dropzone { float:right; }
+#IMS_F2 #F2_progress_bar { margin:8px 0 0 0; height:16px; width:0; background-color: #d9d900; border-radius: 5px 5px; } 
+#IMS_F2 #F2_progress { font-weight:400; position:relative; top: -19px; border:1px solid #ffc7ac; border-radius: 5px 5px; height:20px; width:100%} 
+#IMS_F2 #F2_progress .percent { color:red; font-weight:600px }
+#IMS_F2 #F2_progress .ptime { color:blue; font-weight:600px }

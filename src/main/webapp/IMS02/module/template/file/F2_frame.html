@@ -1,0 +1,83 @@
+<script type="text/template" id="template_F2_frame">
+	<section class="F2_Frame" id="IMS_F2" name="IMS_F2">	
+		<div id="F2_access">
+			<div class="F2_selectzone" onclick="F2.fileselectclick()">File Select Click</div>
+			<div id="F2_dropzone_div" class="F2_dropzone" ondragover="F2.dragover()" ondrop="F2.drop()" draggable="true">File Drag & Drop</div>	
+		</div>		     
+		<div style="display:none">
+			<form id="F2_ie_file_upload_form" method="post" enctype="multipart/form-data" action="/ims/f2/ie/fileupload.do" target="">	
+				<input id="F2_file_select" name="F2_file_select" type="file" multiple onchange="F2.fileinputselect()" />
+				<input id="F2_fgroupkey" name="F2_fgroupkey" type="hidden" value="" />
+				<iframe id="F2_iframe_target" name="F2_iframe_target" style="visibility:hidden"></iframe>
+			</form>
+		</div>
+		
+		<div id="F2_progress_bar"></div>
+		<div id="F2_progress"></div>
+
+		<div class="F2_container">
+		    <G2 id="F2_list" 
+		        url="/ims/f2/list.do" 
+		        headerHeight="30"    
+		        headerRowCnt="1" 
+		        rowHeight="22"    
+		        viewRowCnt="5"
+		        pageRowCnt="100"
+		        fixCnt="0"
+		        rowSpan="" 
+		        mode="view"
+		        headergroup=""
+		        header="
+		                    { title=F2_key, 		id=f2_key, 								hiddenYN=Y	}
+		                    { title=File Name, 	id=f2_display_file_name, 	width=380,	align=left,		click=ims_f2_download }
+		                    { title=Date, 			id=f2_regist_datetime, 		width=140 	}
+		                    { title=File Size, 	id=f2_file_size, 					width=80, 	align=right,	formatter=ims_f2_sizeconverter }
+		                    { title=Use, 				id=f2_use_yn, 						width=50, 	align=left, 	formatter=ims_f2_useyn_formatter,	click=ims_f2_useyn_click }
+		                    { title=File Group Key, 					id=f2_group_key, 				hiddenYN=Y }
+		                    { title=File save file name, 			id=f2_save_file_name, 	hiddenYN=Y }
+		                    { title=File save file path, 			id=f2_save_file_path, 	hiddenYN=Y }
+		                    { title=File save file extension, id=f2_file_extension, 	hiddenYN=Y }  
+		                " 
+			></G2>      
+		</div>
+	</section>
+</script>
+
+<!-- download only -->
+<script type="text/template" id="template_F2_download_frame">
+	<section class="F2_Frame" id="IMS_F2" name="IMS_F2">	
+
+		<div class="F2_container">
+		    <G2 id="F2_download_list" 
+		        url="/ims/f2/list.do" 
+		        headerHeight="30"    
+		        headerRowCnt="1" 
+		        rowHeight="22"    
+		        viewRowCnt="5"
+		        pageRowCnt="100"
+		        fixCnt="0"
+		        rowSpan="" 
+		        mode="view"
+		        headergroup=""
+		        header="
+		                    { title=F2_key, 		id=f2_key, 								hiddenYN=Y	}
+		                    { title=File Name, 	id=f2_display_file_name, 	width=380,	align=left,		click=ims_f2_download }
+		                    { title=Date, 			id=f2_regist_datetime, 		width=140 	}
+		                    { title=File Size, 	id=f2_file_size, 					width=80, 	align=right,	formatter=ims_f2_sizeconverter }
+		                    { title=Use, 				id=f2_use_yn, 						width=50, 	align=left, 	formatter=ims_f2_useyn_formatter,	click=ims_f2_useyn_click }
+		                    { title=File Group Key, 					id=f2_group_key, 				hiddenYN=Y }
+		                    { title=File save file name, 			id=f2_save_file_name, 	hiddenYN=Y }
+		                    { title=File save file path, 			id=f2_save_file_path, 	hiddenYN=Y }
+		                    { title=File save file extension, id=f2_file_extension, 	hiddenYN=Y }  
+		                " 
+			></G2>      
+		</div>
+	</section>
+</script>
+
+<form id="ims_f2_fileDownloadFrm" action="/FileDownloadManage" method="post"  target="ims_f2_filedownloadiframe">
+	<input name="f2_key" type="hidden" value=""/>
+</form>
+<div style="display:none">
+	<iframe name="ims_f2_filedownloadiframe" id="ims_f2_filedownloadiframe" style="width:0;height:0"></iframe>
+</div>

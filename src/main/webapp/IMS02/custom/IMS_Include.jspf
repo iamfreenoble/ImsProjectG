@@ -1,0 +1,45 @@
+<%@	page pageEncoding="UTF-8"%>
+<%@ page import="java.text.SimpleDateFormat,java.util.Date" %>
+<%@ page import="ims.basic.bean.ImsProperty" %>
+<%
+	String gubun	= ImsProperty.getInstance().getProperty("GUBUN");
+	String ver 		=	ImsProperty.getInstance().getProperty("VERSION");
+	SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
+	request.setAttribute("version",  ("real".equals(gubun) ? ver : formatter.format(new Date())));
+%>
+<!-- 
+=================================================================================
+ *  파 일 명   : IMS_Include.html
+ *  작성목적    : 공통 INclude 함수
+ *  작 성 자   : 이상준
+ *  최초작성일   : 2018.12.01
+ *  최종작성일   :
+ *  수정내역    :
+=================================================================================*/
+ -->
+
+<script type="text/javascript" charset="utf-8" src="/IMS02/custom/IMS_Config.js?version=${version}"></script>
+<script type="text/javascript" charset="utf-8" src="/IMS02/module/js/json3.js?version=${version}"></script>  
+<script type="text/javascript" charset="utf-8" src="/IMS02/module/js/IMS_Z_Selector.js?version=${version}"></script>  
+<script type="text/javascript" charset="utf-8" src="/IMS02/module/js/IMS_Z_Common.js?version=${version}"></script>  
+<script type="text/javascript" charset="utf-8" src="/IMS02/module/js/IMS_$U.js?version=${version}"></script>  
+<script type="text/javascript" charset="utf-8" src="/IMS02/module/js/IMS_$G.js?version=${version}"></script>  
+<script type="text/javascript" charset="utf-8" src="/IMS02/module/js/IMS_Z_Loading.js?version=${version}"></script>  
+<script type="text/javascript" charset="utf-8" src="/IMS02/module/js/IMS_Z_Alert.js?version=${version}"></script>  
+<script type="text/javascript" charset="utf-8" src="/IMS02/module/js/IMS_Z_Common.js?version=${version}"></script> 
+<script type="text/javascript" charset="utf-8" src="/IMS02/module/js/IMS_Z_Cookie.js?version=${version}"></script>  
+<script type="text/javascript" charset="utf-8" src="/IMS02/module/js/IMS_Z_DragDrop.js?version=${version}"></script>  
+<script type="text/javascript" charset="utf-8" src="/IMS02/module/js/IMS_$A.js?version=${version}"></script>  
+<script type="text/javascript" charset="utf-8" src="/IMS02/module/js/IMS_$P.js?version=${version}"></script>  
+<script type="text/javascript" charset="utf-8" src="/IMS02/module/js/IMS_$H.js?version=${version}"></script>  
+<script type="text/javascript" charset="utf-8" src="/IMS02/module/js/IMS_$V.js?version=${version}"></script>  
+<script type="text/javascript" charset="utf-8" src="/IMS02/module/js/IMS_Z_EventBinding.js?version=${version}"></script> 
+<script type="text/javascript" charset="utf-8" src="/IMS02/module/js/IMS_Z_Prototype.js?version=${version}"></script> 
+<script type="text/javascript" charset="utf-8" src="/IMS02/module/component/calendar/v02/IMS_Calendar.js?version=${version}"></script> 
+<script type="text/javascript" charset="utf-8" src="/IMS02/module/component/grid/G2/IMS_G2.js?version=${version}"></script>  
+<script type="text/javascript" charset="utf-8" src="/IMS02/module/component/file/F2/IMS_F2.js?version=${version}"></script>  
+<script type="text/javascript" charset="utf-8" src="/IMS02/module/component/chart/tui.chart/3.10/tui-chart-all.min.js?version=${version}"></script>	<!-- chart -->  
+
+<!-- business -->
+<script type="text/javascript" charset="utf-8" src="/business/common/common.js?version=${version}"></script>  
+<script type="text/javascript" charset="utf-8" src="/business/common/frame.js?version=${version}"></script>  

@@ -1,0 +1,70 @@
+<script type="text/template" id="UserSelect_Popup">
+	<div id="UserSelectFrame">
+
+		<section class="agcenter pa10px">
+			<input type="radio" name="user_type" checked value="01"><span>연구책임자</span>
+			<input type="radio" name="user_type" value="02"><span>공동연구자</span>
+			<input type="radio" name="user_type" value="03"><span>연구간호사</span>
+			<input type="radio" name="user_type" value="04"><span>연구코디네이터</span>
+			<input type="radio" name="user_type" value="05"><span>연구원</span>
+			<input type="radio" name="user_type" value="06"><span>폐기능사</span>
+			<input type="radio" name="user_type" value="07"><span>심리학자</span>
+			<input type="radio" name="user_type" value="08"><span>관리약사</span>
+			<input type="radio" name="user_type" value="08"><span>의료기기관리자</span>
+		</section>
+
+		<!-- LIST -->
+		<div id="bootContainer" class="w100">
+			<G2	id="userSelectList" 
+				url="/userInfo/list.do" 
+				headerHeight="30"    
+				headerRowCnt="1" 
+				rowHeight="22"    
+				viewRowCnt="10"
+				pageRowCnt="100"
+				fixCnt="2"
+				rowSpan="" 
+				mode="view"
+				headergroup=""
+				header="
+							{ title=아이디, id=user_id, width=70, align=center, hiddenYN=Y }
+							{ title=이름, id=user_nm, width=80, align=center, click=lfnCallCUserSelectSelect }
+							{ title=소속, id=school, width=120, align=left }
+							{ title=부서, id=aff, width=120, align=left }
+							{ title=직급, id=pos, width=90, align=center}
+							{ title=전공, id=major, width=90, align=center, hiddenYN=Y}
+							{ title=HP, id=hp1, width=100, align=center}
+							{ title=TEL, id=tel1, width=100, align=center}
+							{ title=이메일, id=email, width=120 }
+							{ title=승인여부, id=p_approve, width=80, hiddenYN=Y }
+						" 
+			></G2>		
+		</div>
+
+		<div id="selectUserFrame" style="margin-top:50px;overflow:hidden;overflow-y:auto;height:300px">
+		<table class="formTable" title="연구자 타이틀을 클릭하시면 사용자를 등록/수정 할수 있습니다">
+			<colgroup>
+				<col width="120">			
+				<col width="110">			
+				<col width="110">
+				<col><col><col>
+				<col width="100">			
+				<col width="50">
+			</colgroup>			
+			<tbody>
+				<tr>
+					<th rowspan=100 class="curp" onclick="CUserSelect.popupselect(this.parentElement.parentElement.parentElement.parentElement)">연구자</th>
+					<th>연구자구분</th>
+					<th>성명</th>
+					<th>소속(과)</th>
+					<th>직위</th>
+					<th>연락처</th>
+					<th>교육이수현황</th>
+					<th>삭제</th>
+				</tr>
+			</tbody>
+		</table>
+		</div>
+
+	</div>
+</script>

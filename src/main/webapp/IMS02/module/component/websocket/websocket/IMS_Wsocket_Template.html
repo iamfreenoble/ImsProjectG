@@ -1,0 +1,176 @@
+<!--=================================================================================
+ *	파 일 명		: IMS_Wsocket_template.html
+ *	작성목적		: 웹소켓 template html
+ *	작 성 자		: 이상준
+ *	최초작성일	: 2017.03.20
+ *	최종작성일	:
+ *	수정내역		:
+ *				
+ *
+=================================================================================-->
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="./../../a_expanded/IMS_Include.css" media="screen"/>
+</head>
+<body style="overflow:hidden">
+	<script type="text/javascript" src="./../../a_expanded/IMS_Config.js"></script>
+	<script type="text/javascript" src="./../../a_expanded/IMS_Include.js"></script>
+
+	<div id='ims_wsocket_template'>
+		
+		<input type='hidden' id='roomid' name='roomid'>
+		<input type='hidden' id='userid' name='userid'>
+		<input type='hidden' id='username' name='username'>
+		<input type='hidden' id='usercharac' name='usercharac'>
+		<input type='hidden' id='sendtoid' name='sendtoid'>
+		<input type='hidden' id='sendtoname' name='sendtoname'>
+		<input type='hidden' id='gubun' name='gubun'>
+		<input type='hidden' id='message' name='message'>
+		<input type='hidden' id='info' name='info'>
+		<input type='hidden' id='sessionid' name='sessionid'>
+		<input type='hidden' id='datetime' name='datetime'>
+		
+		<div id='userframe' name='userframe'>
+			<div id="_first"></div>
+			<div id="_second" style="background-image:url(/html/img/chatting/krematalk.png)" onclick='ws_userlistcall()'>&nbsp;</div>  
+		</div>
+		<div id='content' name='content'></div>
+		<textarea id='messagearea' onkeyup='ws_imecheck();ws_enterchk(event,this)' onfocus="ws_imecheck()"></textarea>
+		<div class="buttondiv">
+			<label id="imelabel">영문</label>
+			<input type='button' value='EXIT' onclick='Util.wintabclose()'>
+			<input type='button' value='SAVE' onclick='ws_save()'>
+			<input type='button' value='SEND' onclick='ws_send($hD("#messagearea"))'>
+		</div>
+	</div>
+	
+	<form name="wsaveform">
+		<input type="hidden" name="wsTitle" >
+		<input type="hidden" name="wsContent" >
+	</form>
+	<iframe style="display:none" id="wsaveframe" name="wsaveframe"></iframe>
+	
+	<div id="userlist" style="list-style-type: none;"></div>
+	
+	<script>
+		//---*	웹소켓 변수
+		var WSOCKET = null;
+
+		//---*	한영 확인
+		function ws_imecheck(){
+			var v;
+			try{
+				v = $hD("#messagearea").value;
+				if (!Util.isNullOrEmpty(v)){
+					$hD("#imelabel").innerHTML	=	Util.isEng(v.substring(v.length-2)) ? "영문" : "한글";
+				}
+			} catch(e){
+			} finally{
+				v	=	null;
+			}
+		}
+		
+		//---*	웹소켓 오픈
+		//---*	opener 에서 call
+		function ws_open(){
+			
+			var u,p;
+			try{
+				u	= 	location.href.toString();
+				p	=	u.split("?p=")[1];
+				p	=	decodeURIComponent(p).split("||");
+				IMS_config.userid		=	p[3];
+				IMS_config.username		=	p[4];
+				IMS_config.usercharac	=	p[5];
+				WSOCKET	=	Util.cloneext(Wsocket);
+				WSOCKET.roomopen(IMS_config.wsocketurl,p[0],p[1],p[2]);
+				$hD("#message").focus();
+				
+			} catch(e){
+				alert("[ws_open] "+e)
+			} finally {
+					u	=	null
+				,	p	=	null;
+			}
+		}
+		
+		//---* 엔터 
+		function ws_enterchk(e,o){
+			if (e.which == 13 || e.keyCode == 13) {
+				ws_send(o);
+		        return false;
+		    }
+		}
+		
+		//---* 메시지 send 
+		function ws_send(o){
+			WSOCKET.roomsend(o);
+		}
+		
+		//---*	초대할 사용자 리스트
+		function ws_userlistcall(){
+			//---*	서버의 websocket 라이브러리에서 사용자 정보를 읽어온다
+			Ajax.call({loading:false, url:"/websocket/getuser.do"},function(r){
+				var h = "";
+				var c = "";
+				for( var i=0,ro; ro=r.rows[i]; i+=1){
+					if (ro.userConnect === "Y"){
+						h	+=	"<li><img style='width:100px' onclick='ws_adduser(this)' src='" + (Util.isNullOrEmpty(ro.character) ? "/WebIMS/images/websocket/nocharacter.jpg" : ro.character) + "' title='"+ro.name+"' id='"+ro.id+"'></li>";
+					}
+				}
+				$hD('#userlist').innerHTML	=	h; 
+				$hD('#userlist').style.display	=	"block";
+			});
+			_IMS_WSOCKETCONNECTOR_INTERVAL	=	setInterval(function(){
+				Ajax.call({loading:false, url:"/websocket/getuser.do"},function(r){
+					var h = "";
+					var c = "";
+					for( var i=0,ro; ro=r.rows[i]; i+=1){
+						if (ro.userConnect === "Y"){
+							h	+=	"<li><img style='width:100px' onclick='ws_adduser(this)' src='" + (Util.isNullOrEmpty(ro.character) ? "/WebIMS/images/websocket/nocharacter.jpg" : ro.character) + "' title='"+ro.name+"' id='"+ro.id+"'></li>";
+						}
+					}
+					$hD('#userlist').innerHTML	=	h; 
+				});
+			}, 3000);
+		}
+
+		//---*	사용자를 추가한다
+		function ws_adduser(o){
+			WSOCKET.roomadduser(o.id,o.title,$hD("#roomid").value);
+		}
+		
+		//---*	내용저장
+		function ws_save(){
+			var f;
+			try{
+				f	=	$hD("form[name=wsaveform]");
+				f.action	=	"/WebSocketSave";
+				f.method	=	"post";
+				f.target	=	"wsaveframe";
+				$hD("input[name=wsTitle]",f).value = Util.text($hA("#userframe div")[0]);
+				$hD("input[name=wsContent]",f).value = encodeURIComponent($hD("#content").innerHTML);
+				f.submit();
+			}catch(e){
+			}finally{
+				f	=	null;
+			}
+		}
+		
+		//---*	start
+		Util.ready(document,function(){
+			$hD("#messagearea").style.imeMode = "active";	//---*	한글 처리
+			ws_open();
+		})
+		
+		Util.eventbind(window,"onclick",function(){ 
+			$hD('#userlist').style.display	=	"none"; 
+			clearInterval(_IMS_WSOCKETCONNECTOR_INTERVAL);		
+		});
+		
+	</script>
+</body>
+</html>

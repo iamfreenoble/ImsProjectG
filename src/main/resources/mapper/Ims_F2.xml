@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="ims.f2">  
+
+	<!-- List -->
+	<select id="list" parameterType="map" resultType="map" resultSetType="FORWARD_ONLY">
+		/**  ims.f2.list	**/
+		SELECT	${getdata}
+		FROM  (
+						SELECT  '' AS g2check
+								,		T.g2total   
+								, 	R.*
+						FROM 	ims_f2 R
+							,  (
+										SELECT	COUNT(*) AS g2total
+										FROM   	ims_f2 F2
+										WHERE  	1 = 1
+					      	<if test="f2_list_type == 'group' ">
+										AND			F2.f2_group_key	=	#{f2_group_key}
+									</if>
+					      	<if test="f2_list_type == 'mass' ">
+										AND			F2.f2_group_key	IN (
+																									SELECT	FG2.f2_group_key
+																									FROM		ims_f2_group	FG2
+																									WHERE		FG2.f2_mass_group_key	=	#{f2_mass_group_key}
+																								)	
+									</if>
+										AND			F2.f2_use_yn		&lt;&gt;	'D'
+										${filter}
+										${sort}	
+									) T
+						WHERE	1 = 1
+	      	<if test="f2_list_type == 'group' ">
+						AND		R.f2_group_key	=	#{f2_group_key}
+					</if>
+	      	<if test="f2_list_type == 'mass' ">
+						AND		R.f2_group_key	IN (
+																				SELECT	FG2.f2_group_key
+																				FROM		ims_f2_group	FG2
+																				WHERE		FG2.f2_mass_group_key	=	#{f2_mass_group_key}
+																			)	
+					</if>
+						AND		R.f2_use_yn			&lt;&gt;	'D'
+						${filter}
+						${sort}	
+				 		LIMIT	${rowFirst}, ${pageRowCnt}
+    ) OOO
+  	${groupby}
+	</select>
+	
+	<!-- list2 -->
+	<select id="list2" parameterType="map" resultType="map">
+		/**  ims.f2.list2	**/
+		SELECT	f2.*
+		FROM		ims_f2	f2
+		WHERE  	1 = 1
+		AND			F2.f2_group_key	=	#{f2_group_key}
+	</select>
+
+	<!-- 그룹 key get -->
+	<insert id="getgroupkey" parameterType="map">
+		/**  ims.f2.getgroupkey	**/
+		INSERT INTO ims_f2_group 
+		(		
+			 	f2_mass_group_key
+			,	f2_group_regist_id
+			, f2_group_regist_datetime
+		) VALUES (
+				#{f2_mass_group_key}	
+			,	IFNULL(#{session_user_id},'file_manager')
+			, now()
+		
+		)
+		<selectKey resultType="Long" keyProperty="f2_group_key" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+	
+	<!-- view -->
+	<select id="view" parameterType="map" resultType="map">
+		/**  ims.f2.view	**/
+		SELECT	f2.*
+		FROM		ims_f2	f2
+		WHERE		f2.f2_key	=	#{f2_key}
+	</select>
+
+	<!-- insert -->
+	<insert id="insert" parameterType="map">
+		/**  ims.f2.insert	**/
+		INSERT INTO ims_f2 
+		(		
+				f2_group_key
+			,	f2_display_file_name
+			, f2_save_file_name
+			, f2_save_file_path
+			, f2_file_extension
+			, f2_file_size
+			, f2_regist_id
+			, f2_regist_datetime
+			, f2_use_yn
+		) VALUES (
+				#{f2_group_key}
+			, #{f2_display_file_name}
+			, #{f2_save_file_name}
+			, #{f2_save_file_path}
+			, #{f2_file_extension}
+			, #{f2_file_size}
+			,	IFNULL(#{session_user_id},'file_manager')
+			, now()
+			, 'Y'
+		
+		)
+		ON	DUPLICATE KEY
+		UPDATE 	
+				f2_group_key					=	#{f2_group_key} 	
+			, f2_display_file_name	=	#{f2_display_file_name} 	
+			, f2_save_file_name     = #{f2_save_file_name}    
+			, f2_save_file_path     = #{f2_save_file_path}    
+			, f2_file_extension     = #{f2_file_extension}    
+			, f2_file_size          = #{f2_file_size}         
+			, f2_regist_id          = #{f2_regist_id}         
+			, f2_use_yn             = #{f2_use_yn}                     
+		<selectKey resultType="Long" keyProperty="f2_key" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+	
+	<!-- update -->
+	<update id="update" parameterType="map">
+		/**  ims.f2.update	**/
+		INSERT INTO ims_f2 
+		(		
+				f2_group_key
+			,	f2_display_file_name
+			, f2_save_file_name
+			, f2_save_file_path
+			, f2_file_extension
+			, f2_file_size
+			, f2_regist_id
+			, f2_regist_datetime
+			, f2_use_yn
+		) VALUES (
+				#{f2_group_key}
+			, #{f2_display_file_name}
+			, #{f2_save_file_name}
+			, #{f2_save_file_path}
+			, #{f2_file_extension}
+			, #{f2_file_size}
+			,	IFNULL(#{session_user_id},'file_manager')			
+			, now()
+			, 'Y'
+		
+		)
+		ON	DUPLICATE KEY
+		UPDATE 	
+				f2_group_key					=	#{f2_group_key} 	
+			, f2_display_file_name	=	#{f2_display_file_name} 	
+			, f2_save_file_name     = #{f2_save_file_name}    
+			, f2_save_file_path     = #{f2_save_file_path}    
+			, f2_file_extension     = #{f2_file_extension}    
+			, f2_file_size          = #{f2_file_size}         
+			, f2_regist_id          = #{f2_regist_id}         
+			, f2_use_yn             = #{f2_use_yn}                     
+		<selectKey resultType="Long" keyProperty="f2_key" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</update>
+
+	<!-- updateuseyn	파일 사용여부 업데이트-->
+	<update id="updateuseyn" parameterType="map">
+		/**  ims.f2.updateuseyn	**/
+		UPDATE 	ims_f2
+		SET			f2_use_yn	=	#{f2_use_yn}
+		WHERE		f2_key		=	#{f2_key}
+	</update>
+
+	<!-- updateuseynall	삭제확정/삭제취소 건 업데이트 -->
+	<update id="updateuseynall" parameterType="map">
+		/**  ims.f2.updateuseynall	**/
+		UPDATE 	ims_f2
+		SET			f2_use_yn	=	#{f2_use_yn}
+		WHERE		f2_use_yn	=	'N'
+		AND			f2_group_key	IN	
+		<foreach collection="list" item="item" index="index" separator="," open="(" close=")">
+    	#{item.f2_group_key}
+   	</foreach>
+	</update>
+
+</mapper>
