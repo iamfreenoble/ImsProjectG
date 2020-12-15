@@ -29,6 +29,7 @@ import org.slf4j.LoggerFactory;
 import ims.basic.bean.ImsClassDispatcher;
 import ims.basic.bean.ImsProperty;
 import ims.common.Convert;
+import org.springframework.stereotype.Component;
 
 /**
  * 

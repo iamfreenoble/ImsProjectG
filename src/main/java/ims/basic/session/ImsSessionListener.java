@@ -1,5 +1,6 @@
 package ims.basic.session;
 
+import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSession;
 import javax.servlet.http.HttpSessionAttributeListener;
 import javax.servlet.http.HttpSessionBindingEvent;
@@ -17,6 +18,7 @@ import ims.common.Log;
  * @description 세션 바인딩을 통하여 IMS USER 정보를 담는다
  *
  */
+@WebListener
 public class ImsSessionListener
 		implements HttpSessionListener, HttpSessionAttributeListener, HttpSessionBindingListener {
 

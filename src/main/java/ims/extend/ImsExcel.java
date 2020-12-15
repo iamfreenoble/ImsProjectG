@@ -11,6 +11,7 @@ import java.util.Enumeration;
 import java.util.HashMap;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -37,6 +38,7 @@ import org.json.simple.parser.ParseException;
 
 import ims.basic.bean.ImsProperty;
 import ims.common.Util;
+import org.springframework.stereotype.Component;
 
 /**
  * 
@@ -44,6 +46,7 @@ import ims.common.Util;
  * @description G2 그리드 엑셀 다운로드
  *
  */
+@WebServlet(name = "ImsExcel", urlPatterns = { "/ImsExcel" })
 public class ImsExcel extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 

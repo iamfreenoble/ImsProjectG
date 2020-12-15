@@ -23,6 +23,7 @@ import com.aspose.slides.SaveFormat;
 
 import ims.basic.bean.ImsClassDispatcher;
 import ims.basic.bean.ImsProperty;
+import org.springframework.stereotype.Component;
 
 /**
  * 

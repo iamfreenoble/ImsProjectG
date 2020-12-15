@@ -1,20 +1,32 @@
 package run;
 
 import biz.core.Interceptor;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.ComponentScan.Filter;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.FilterType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.GsonHttpMessageConverter;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.context.ContextLoaderListener;
+import org.springframework.web.servlet.config.annotation.*;
 
+import javax.servlet.ServletContextListener;
 import java.util.List;
 
 @Configuration
-@ComponentScan(basePackages={"biz","ims"})
-public class WebConfig implements WebMvcConfigurer {
+@ServletComponentScan(basePackages={"biz","ims","run"})
+@ComponentScan( basePackages={"biz","ims","run"}
+            ,   useDefaultFilters=true
+            ,   includeFilters=@ComponentScan.Filter(type=FilterType.ASSIGNABLE_TYPE, classes=ims.basic.bean.ImsFilter.class))
+class WebConfig implements WebMvcConfigurer {
 
+/*
+    @Override
+    public void configureDefaultServletHandling(DefaultServletHandlerConfigurer configurer) {
+        configurer.enable("default");
+    }
+*/
     /**
      * Resource Mapping
      * @param registry

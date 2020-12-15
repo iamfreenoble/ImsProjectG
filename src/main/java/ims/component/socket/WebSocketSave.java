@@ -8,6 +8,7 @@ import java.net.URLDecoder;
 import java.net.URLEncoder;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -22,6 +23,7 @@ import org.slf4j.LoggerFactory;
  * @type_name WebSocketSave
  * @description 채팅 정보를 저장한다
  */
+@WebServlet(name = "WebSocketSave", urlPatterns = { "/WebSocketSave" })
 public class WebSocketSave extends HttpServlet {
 
 	private static Logger logger = LoggerFactory.getLogger(WebSocketSave.class);
